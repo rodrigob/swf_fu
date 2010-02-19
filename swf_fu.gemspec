@@ -36,12 +36,12 @@ Gem::Specification.new do |s|
      "tasks/rails.rake"
   ]
   s.homepage = %q{http://github.com/marcus-wyatt/swf_fu}
-  s.post_install_message = %q{swf_fu has rake tasks to install and uninstall the assets required 
+  s.post_install_message = %q{
+swf_fu has rake tasks to install and uninstall the assets required 
 when running within a rails project. To enable the rake tasks, add 
 the following require to your Rakefile:
     
   require 'swf_fu/tasks' 
-
 
 }
   s.rdoc_options = ["--charset=UTF-8"]
