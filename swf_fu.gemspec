@@ -40,8 +40,9 @@ Gem::Specification.new do |s|
 when running within a rails project. To enable the rake tasks, add 
 the following require to your Rakefile:
     
-  require 'swf_fu/tasks'
-    
+  require 'swf_fu/tasks' 
+
+
 }
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
