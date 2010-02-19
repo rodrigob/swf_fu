@@ -36,8 +36,7 @@ swf_fu has rake tasks to install and uninstall the assets required
 when running within a rails project. To enable the rake tasks, add 
 the following require to your Rakefile:
     
-  require 'swf_fu/tasks'
-    
+  require 'swf_fu/tasks' \n\n
     MESSAGE
     
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
