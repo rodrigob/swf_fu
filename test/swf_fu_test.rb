@@ -1,7 +1,8 @@
-require File.dirname(__FILE__)+'/test_helper'
-require File.dirname(__FILE__)+'/results'
+require File.dirname(__FILE__) + '/test_helper'
+require File.dirname(__FILE__) + '/results'
 
 class SwfFuTest < ActionView::TestCase
+  
   def assert_same_stripped(expect, test)
     expect, test = [expect, test].map{|s| s.split("\n").map(&:strip)}
     same = expect & test

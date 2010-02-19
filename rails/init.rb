@@ -1,6 +1,10 @@
+Dir[File.join(File.dirname(__FILE__), '../vendor/*/lib')].each do |path|
+  $LOAD_PATH.unshift path
+end
+
 require 'action_view/helpers/asset_tag_helper'
-require File.dirname(__FILE__) + "/lib/action_view/helpers/swf_fu_helper"
-require File.dirname(__FILE__) + "/lib/action_view/helpers/asset_tag_helper/swf_asset"
+
+require 'swf_fu'
 
 # ActionView::Helpers is for recent rails version, ActionView::Base for older ones (in which case ActionView::Helpers::AssetTagHelper is also needed for tests...)
 ActionView::Helpers.class_eval  { include ActionView::Helpers::SwfFuHelper } # For recent rails version...
