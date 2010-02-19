@@ -42,10 +42,23 @@ namespace :swf do
   task :uninstall => :app_env do
     if defined?(RAILS_ROOT)
       dest = RAILS_ROOT + "/public"
-      FileUtils.rm  "#{dest}/javascripts/swfobject.js" rescue puts "Warning: swfobject.js could not be deleted"
-      FileUtils.rm  "#{dest}/swfs/expressInstall.swf" rescue puts "Warning: expressInstall.swf could not be deleted"
-      Dir.rmdir "#{dest}/swfs/" rescue "don't worry if directory is not empty"
+      begin
+        FileUtils.rm  "#{dest}/javascripts/swfobject.js"
+      rescue Exception => e
+        puts "Warning: swfobject.js could not be deleted"
+      end
+      begin
+        FileUtils.rm  "#{dest}/swfs/expressInstall.swf"
+      rescue Exception => e
+        puts "Warning: expressInstall.swf could not be deleted"
+      end
+      begin
+        Dir.rmdir "#{dest}/swfs/"
+      rescue Exception => e
+        puts "Don't remove swf directory if directory is not empty"
+      end
     else
+      puts "Unable to do uninstal. We need to be in the root of a Rails Application."
     end
   end
 end
