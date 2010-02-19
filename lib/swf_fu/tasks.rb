@@ -13,12 +13,10 @@ namespace :swf do
     if defined?(RAILS_ROOT)
       # Some paths
       src = File.dirname(__FILE__) + "/../../assets"
-      puts RAILS_ROOT + "/public"
       dest = RAILS_ROOT + "/public"
 
-      filename =  "#{dest}/javascripts/swfobject.js"
-      unless File.exist?(filename)
-        FileUtils.cp "#{src}/javascripts/swfobject.js", filename
+      unless File.exist?("#{dest}/javascripts/swfobject.js")
+        FileUtils.cp "#{src}/javascripts/swfobject.js", "#{dest}/javascripts/swfobject.js"
         puts "Copying 'swfobject.js'"
       end
 
@@ -27,38 +25,48 @@ namespace :swf do
         puts "Creating new 'swfs' directory for swf assets"
       end
 
-      filename = "#{dest}/swfs/expressInstall.swf"
-      unless File.exist?(filename)
-        FileUtils.cp "#{src}/swfs/expressInstall.swf", filename
+      unless File.exist?("#{dest}/swfs/expressInstall.swf")
+        FileUtils.cp "#{src}/swfs/expressInstall.swf", "#{dest}/swfs/expressInstall.swf"
         puts "Copying 'expressInstall.swf', the default flash auto-installer."
       end
+
       puts "Installation done."
     else
       puts "Unable to do installation. We need to be in the root of a Rails Application."
     end
   end
   
-  desc "Uninstall swf_fu assets from your rails application"
-  task :uninstall => :app_env do
+  task :rm_swfobject do
     if defined?(RAILS_ROOT)
-      dest = RAILS_ROOT + "/public"
       begin
-        FileUtils.rm  "#{dest}/javascripts/swfobject.js"
+        FileUtils.rm  "#{RAILS_ROOT}/public/javascripts/swfobject.js"
       rescue Exception => e
         puts "Warning: swfobject.js could not be deleted"
       end
+    end
+  end
+
+  task :rm_express_install do
+    if defined?(RAILS_ROOT)
       begin
-        FileUtils.rm  "#{dest}/swfs/expressInstall.swf"
+        FileUtils.rm  "#{RAILS_ROOT}/public/swfs/expressInstall.swf"
       rescue Exception => e
         puts "Warning: expressInstall.swf could not be deleted"
       end
+    end
+  end
+  
+  task :rm_swf_dir do
+    if defined?(RAILS_ROOT)
       begin
-        Dir.rmdir "#{dest}/swfs/"
+        Dir.rmdir "#{RAILS_ROOT}/public/swfs/"
       rescue Exception => e
         puts "Don't remove swf directory if directory is not empty"
       end
-    else
-      puts "Unable to do uninstal. We need to be in the root of a Rails Application."
     end
   end
+  
+  desc "Uninstall swf_fu assets from your rails application"
+  task :uninstall => [:app_env, :rm_swfobject, :rm_express_install, :rm_swf_dir]
+  
 end
