@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{swf_fu}
-  s.version = "1.3.2"
+  s.version = "1.3.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Marc-Andr\303\251 Lafortune"]
-  s.date = %q{2010-02-19}
+  s.authors = ["Marc-Andr\303\251 Lafortune", "Marcus Wyatt"]
+  s.date = %q{2010-02-24}
   s.description = %q{swf_fu (pronounced "swif-fu", bonus joke for french speakers) uses SWFObject 2.2 to embed swf objects in HTML and supports all its options.
     SWFObject 2 is such a nice library that Adobe now uses it as the official way to embed swf!
     SWFObject's project can be found at http://code.google.com/p/swfobject
@@ -46,7 +46,7 @@ the following require to your Rakefile:
 }
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{With the swf_fu gem, rails treats your swf files like any other asset (images, javascripts, etc...).}
   s.test_files = [
     "test/results.rb",
@@ -59,12 +59,12 @@ the following require to your Rakefile:
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency(%q<thoughtbot-shoulda>, [">= 0"])
+      s.add_development_dependency(%q<shoulda>, [">= 2.10.3"])
     else
-      s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
+      s.add_dependency(%q<shoulda>, [">= 2.10.3"])
     end
   else
-    s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
+    s.add_dependency(%q<shoulda>, [">= 2.10.3"])
   end
 end
 
