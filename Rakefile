@@ -13,8 +13,8 @@ begin
     swf_fu has been tested with rails v2.0 up to v3.0b and has decent test coverage so <tt>rake test:plugins</tt> should reveal any incompatibility. Comments and pull requests welcome: http://github.com/marcandre/swf_fu}
     gem.email = "marcus.wyatt@visfleet.com"
     gem.homepage = "http://github.com/marcus-wyatt/swf_fu"
-    gem.authors = ["Marc-André Lafortune"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.authors = ["Marc-André Lafortune", "Marcus Wyatt"]
+    gem.add_development_dependency "shoulda", ">= 2.10.3"
     gem.files     = FileList[
       "assets/**/*.js",
       "assets/**/*.swf",
