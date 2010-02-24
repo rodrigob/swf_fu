@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
     SWFObject's project can be found at http://code.google.com/p/swfobject
 
     swf_fu has been tested with rails v2.0 up to v3.0b and has decent test coverage so <tt>rake test:plugins</tt> should reveal any incompatibility. Comments and pull requests welcome: http://github.com/marcandre/swf_fu}
-  s.email = %q{marcus.wyatt@visfleet.com}
+  s.email = %q{gemcutter@marc-andre.ca marcus.wyatt@visfleet.com}
   s.extra_rdoc_files = [
     "LICENSE",
      "README.rdoc"
