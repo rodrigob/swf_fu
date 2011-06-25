@@ -10,7 +10,7 @@ namespace :swf do
   
   desc "Install swf_fu assets into your rails application"
   task :install => :app_env do
-    puts "Rails.root", Rails.root
+
     if defined?(Rails.root)
       # Some paths
       src = File.dirname(__FILE__) + "/../../assets"
