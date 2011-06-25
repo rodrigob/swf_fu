@@ -3,17 +3,17 @@ require 'fileutils'
 namespace :swf do
   
   task :app_env do
-    if defined?(RAILS_ROOT)
+    if defined?(Rails.root)
       Rake::Task[:environment].invoke
     end
   end
   
   desc "Install swf_fu assets into your rails application"
   task :install => :app_env do
-    if defined?(RAILS_ROOT)
+    if defined?(Rails.root)
       # Some paths
       src = File.dirname(__FILE__) + "/../../assets"
-      dest = RAILS_ROOT + "/public"
+      dest = Rails.root + "/public"
 
       unless File.exist?("#{dest}/javascripts/swfobject.js")
         FileUtils.cp "#{src}/javascripts/swfobject.js", "#{dest}/javascripts/swfobject.js"
@@ -37,9 +37,9 @@ namespace :swf do
   end
   
   task :rm_swfobject do
-    if defined?(RAILS_ROOT)
+    if defined?(Rails.root)
       begin
-        FileUtils.rm  "#{RAILS_ROOT}/public/javascripts/swfobject.js"
+        FileUtils.rm  "#{Rails.root}/public/javascripts/swfobject.js"
       rescue Exception => e
         puts "Warning: swfobject.js could not be deleted"
       end
@@ -47,9 +47,9 @@ namespace :swf do
   end
 
   task :rm_express_install do
-    if defined?(RAILS_ROOT)
+    if defined?(Rails.root)
       begin
-        FileUtils.rm  "#{RAILS_ROOT}/public/swfs/expressInstall.swf"
+        FileUtils.rm  "#{Rails.root}/public/swfs/expressInstall.swf"
       rescue Exception => e
         puts "Warning: expressInstall.swf could not be deleted"
       end
@@ -57,9 +57,9 @@ namespace :swf do
   end
   
   task :rm_swf_dir do
-    if defined?(RAILS_ROOT)
+    if defined?(Rails.root)
       begin
-        Dir.rmdir "#{RAILS_ROOT}/public/swfs/"
+        Dir.rmdir "#{Rails.root}/public/swfs/"
       rescue Exception => e
         puts "Don't remove swf directory if directory is not empty"
       end
