@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.version = "1.3.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Marc-Andr\303\251 Lafortune", "Marcus Wyatt"]
-  s.date = %q{2010-02-24}
+  s.authors = ["Marc-Andr\303\251 Lafortune", "Marcus Wyatt", "Rodrigo Benenson"]
+  s.date = %q{2011-06-27}
   s.description = %q{swf_fu (pronounced "swif-fu", bonus joke for french speakers) uses SWFObject 2.2 to embed swf objects in HTML and supports all its options.
     SWFObject 2 is such a nice library that Adobe now uses it as the official way to embed swf!
     SWFObject's project can be found at http://code.google.com/p/swfobject
@@ -30,9 +30,7 @@ Gem::Specification.new do |s|
      "vendor/assets/swfs/expressInstall.swf",
      "lib/action_view/helpers/asset_tag_helper/swf_asset.rb",
      "lib/action_view/helpers/swf_fu_helper.rb",
-     "lib/swf_fu.rb",
-     "lib/swf_fu/tasks.rb",
-     "tasks/rails.rake"
+     "lib/swf_fu.rb"
   ]
   s.homepage = %q{http://github.com/marcus-wyatt/swf_fu}
   s.post_install_message = %q{

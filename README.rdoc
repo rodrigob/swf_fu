@@ -10,50 +10,22 @@ SWFObject's project can be found at http://code.google.com/p/swfobject
 
 == Install
 
-Assuming you have git[http://git-scm.com/] installed (check with <q>git version</q>), it is easy to install from your applications directory
-
-As a plugin:
-
-  # rails 3
-  rails plugin install git://github.com/marcandre/swf_fu.git
-
-  # rails 2 (starting at 2.0.2)
-  script/plugin install git://github.com/marcandre/swf_fu.git
-
 As a gem:
 
   [sudo] gem install swf_fu
 
 In rails:
 
-  # Using bundler (Rails 3.0 or 2.3.x)
-  gem 'swf_fu', ‘>=1.3.2', :require => “swf_fu”
-
-  # Rails 2.3.x
-  config.gem 'swf_fu', :lib => 'swf_fu', :version => '>=1.3.2', :source => 'http://gemcutter.org/‘
-
-Because gems don't have install/uninstall hooks like plugins, there is some additional setup.
-
-Edit your rakefile:
-
-  # Rakefile add
-  require 'swf_fu/tasks'
-
-Install/uninstall swf_fu assets:
-
-  rake swf:install    # Install swf_fu assets into your rails application
-  rake swf:uninstall  # Uninstall swf_fu assets from your rails application
+  # Using bundler (Rails 3.1)
+  gem 'swf_fu', ‘>=1.3.4', :require => “swf_fu”
 
 In Rails 3.1 add to your app/assets/javascript/application.js 
 
   //= require swfobject
 
 For older versions of +rails+ or without +git+, you can always download
-+swf_fu+ from github[http://github.com/marcandre/swf_fu/archives/master] and then install it manually:
-
-  rails plugin install ~/Download/swf_fu    # rails 3
-
-  script/plugin install ~/Downloads/swf_fu  # rails 2.x
++swf_fu+ from
+github[http://github.com/marcandre/swf_fu/archives/master] and then install following theirs instructions.
 
 == Usage
 
