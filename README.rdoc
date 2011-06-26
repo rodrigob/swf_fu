@@ -6,7 +6,8 @@ With the +swf_fu+ plugin, rails treats your swf files like any other asset (imag
 SWFObject 2 is such a nice library that Adobe now uses it as the official way to embed swf!
 SWFObject's project can be found at http://code.google.com/p/swfobject
 
-+swf_fu+ has been tested with rails v2.0 up to v3.0b and has decent test coverage so <tt>rake test:plugins</tt> should reveal any incompatibility. Comments and pull requests welcome: http://github.com/marcandre/swf_fu
+This version of +swf_fu+ will only work with rails 3.1. 
+No real tests have been done other than "getting it to work on my application".
 
 == Install
 
@@ -66,8 +67,8 @@ You can override these default options with a global setting:
 
 === Javascript
 
-+swf_fu+ will add 'swfobject' to the list of default javascript files. If you don't include
-the default javascripts, a simple <tt>javascript_include "swfobject"</tt> is needed.
++swf_fu+ will add 'swfobject' to the list asssets. 
+It should be included in the pages using the swf_tag. (see install instructions)
 
 === swf_path
 
