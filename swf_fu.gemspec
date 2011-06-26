@@ -32,7 +32,6 @@ Gem::Specification.new do |s|
      "lib/action_view/helpers/swf_fu_helper.rb",
      "lib/swf_fu.rb",
      "lib/swf_fu/tasks.rb",
-     "rails/init.rb",
      "tasks/rails.rake"
   ]
   s.homepage = %q{http://github.com/marcus-wyatt/swf_fu}
