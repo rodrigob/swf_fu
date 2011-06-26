@@ -32,7 +32,9 @@ In rails:
   # Rails 2.3.x
   config.gem 'swf_fu', :lib => 'swf_fu', :version => '>=1.3.2', :source => 'http://gemcutter.org/‘
 
-Because gems don't have install/uninstall hooks like plugins, there is some additional setup:
+Because gems don't have install/uninstall hooks like plugins, there is some additional setup.
+
+Edit your rakefile:
 
   # Rakefile add
   require 'swf_fu/tasks'
@@ -41,6 +43,10 @@ Install/uninstall swf_fu assets:
 
   rake swf:install    # Install swf_fu assets into your rails application
   rake swf:uninstall  # Uninstall swf_fu assets from your rails application
+
+In Rails 3.1 add to your app/assets/javascript/application.js 
+
+  //= require swfobject
 
 For older versions of +rails+ or without +git+, you can always download
 +swf_fu+ from github[http://github.com/marcandre/swf_fu/archives/master] and then install it manually:
