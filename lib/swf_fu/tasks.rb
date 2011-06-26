@@ -13,7 +13,7 @@ namespace :swf do
 
     if defined?(Rails.root)
       # Some paths
-      src = File.dirname(__FILE__) + "/../../assets"
+      src = File.dirname(__FILE__) + "/../../vendor/assets"
       dest = Rails.root.join( "public" )
 
       unless File.exist?("#{dest}/javascripts/swfobject.js")

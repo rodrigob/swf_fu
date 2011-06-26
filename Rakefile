@@ -16,8 +16,8 @@ begin
     gem.authors = ["Marc-André Lafortune", "Marcus Wyatt"]
     gem.add_development_dependency "shoulda", ">= 2.10.3"
     gem.files     = FileList[
-      "assets/**/*.js",
-      "assets/**/*.swf",
+      "vendor/assets/**/*.js",
+      "vendor/assets/**/*.swf",
       "rails/*.rb",
       "lib/**/*.rb",
       "tasks/**/*.rb",
