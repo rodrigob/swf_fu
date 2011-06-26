@@ -32,7 +32,7 @@ module ActionView #:nodoc:
         if defined? SwfTag
           SwfTag.new(self, @controller, source).public_path
         else
-          compute_public_path(source, SwfAsset::DIRECTORY, SwfAsset::EXTENSION)
+          asset_paths.compute_public_path(source, SwfAsset::DIRECTORY, SwfAsset::EXTENSION)
         end
       end
       alias_method :path_to_swf, :swf_path # aliased to avoid conflicts with a swf_path named route
